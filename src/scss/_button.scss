@@ -9,9 +9,10 @@
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    background-color: #009654;
+    background-color: var(--primary-color);
     color: #fff;
     cursor: pointer;
+    border: 0px;
 
     &:hover {
         background-color: #007d46;

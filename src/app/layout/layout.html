@@ -1,1 +1,12 @@
-<p>layout works!</p>
+<mat-sidenav-container class="main-container">
+    <mat-sidenav class="sidenav" #sidenav mode="side">
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <app-header></app-header>
+        <button (click)="sidenav.toggle()" class="btn">
+            Toggle
+        </button>
+    </mat-sidenav-content>
+</mat-sidenav-container>
