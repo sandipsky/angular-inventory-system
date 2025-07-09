@@ -1,0 +1,23 @@
+<div class="sidebar">
+    <div class="logo-container">
+        <span class="logo">ABIS</span>
+    </div>
+
+    <div class="items-container">
+        <ul>
+            @for (item of navData.slice(0,-1); track $index) {
+            <li class="menu-item">
+                <mat-icon class="icon" [fontIcon]="item.icon"></mat-icon>
+                <span>{{item.name}}</span>
+            </li>
+            }
+        </ul>
+    </div>
+
+    <div class="bottom">
+        <li class="menu-item">
+            <mat-icon class="icon" [fontIcon]="navData[navData.length - 1].icon"></mat-icon>
+            <span>{{navData[navData.length - 1].name}}</span>
+        </li>
+    </div>
+</div>
