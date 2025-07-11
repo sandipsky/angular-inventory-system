@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NavItem } from '../../shared/types/global.types';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './sidebar.scss'
 })
 export class Sidebar {
-  navData = [
+  navData: Array<NavItem> = [
     {
       name: "Dashboard",
       icon: "dashboard",

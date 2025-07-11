@@ -1,4 +1,5 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, inject } from '@angular/core';
+import { CommonService } from '../../../shared/services/common.service';
 
 @Component({
   selector: 'app-account-master',
@@ -7,17 +8,13 @@ import { Component, EventEmitter } from '@angular/core';
   styleUrl: './account-master.scss'
 })
 export class AccountMaster {
-  clickEvent = new EventEmitter<boolean>();
+  public commonService = inject(CommonService);
 
   constructor() {
-    this.clickEvent.emit(true)
-  }
-
-  ngOnInit() {
-    // setTimeout(() => this.clickEvent.emit(true));
+    this.commonService.showSubNav(true);
   }
 
   emitEvent() {
-    this.clickEvent.emit(false);
+    this.commonService.showSubNav(false);
   }
 }

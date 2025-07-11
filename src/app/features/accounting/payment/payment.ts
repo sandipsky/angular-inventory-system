@@ -1,4 +1,5 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, inject } from '@angular/core';
+import { CommonService } from '../../../shared/services/common.service';
 
 @Component({
   selector: 'app-payment',
@@ -7,13 +8,13 @@ import { Component, EventEmitter } from '@angular/core';
   styleUrl: './payment.scss'
 })
 export class Payment {
-  clickEvent = new EventEmitter<boolean>();
-
-  // ngOnInit() {
-  //   setTimeout(() => this.clickEvent.emit(true));
-  // }
+  public commonService = inject(CommonService);
 
   constructor() {
-    this.clickEvent.emit(true)
+    this.commonService.showSubNav(true);
+  }
+
+  emitEvent() {
+    this.commonService.showSubNav(false);
   }
 }
