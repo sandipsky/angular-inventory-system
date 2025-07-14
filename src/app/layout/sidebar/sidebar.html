@@ -15,7 +15,7 @@
     </div>
 
     <div class="bottom">
-        <li class="menu-item">
+        <li [routerLink]="navData[navData.length - 1].url" routerLinkActive="active" class="menu-item">
             <mat-icon class="icon" [fontIcon]="navData[navData.length - 1].icon"></mat-icon>
             <span>{{navData[navData.length - 1].name}}</span>
         </li>

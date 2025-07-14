@@ -1,11 +1,6 @@
 import { Routes } from '@angular/router';
 import { Layout } from './layout/layout';
 import { Dashboard } from './features/dashboard/dashboard';
-import { Inventory } from './features/inventory/inventory';
-import { Billing } from './features/billing/billing';
-import { Accounting } from './features/accounting/accounting';
-import { AccountMaster } from './features/accounting/account-master/account-master';
-import { Payment } from './features/accounting/payment/payment';
 
 export const routes: Routes = [
     {
@@ -23,35 +18,32 @@ export const routes: Routes = [
             },
             {
                 path: 'inventory',
-                component: Inventory
+                loadChildren: () => import('./features/inventory/inventory.routes').then(m => m.inventoryRoutes)
             },
             {
                 path: 'billing',
-                component: Billing
+                loadChildren: () => import('./features/billing/billing.routes').then(m => m.billingRoutes)
             },
             {
                 path: 'accounting',
-                component: Accounting,
-                children: [
-                    {
-                        path: '',
-                        redirectTo: 'account-master',
-                        pathMatch: 'full'
-                    },
-                    {
-                        path: 'account-master',
-                        component: AccountMaster
-                    },
-                    {
-                        path: 'payment',
-                        component: Payment
-                    }
-                ]
+                loadChildren: () => import('./features/accounting/accounting.routes').then(m => m.accountingRoutes)
             },
             {
-                path: 'accounting',
-                component: Accounting
+                path: 'users',
+                loadComponent: () => import('./features/user/user').then(m => m.User)
             },
+            {
+                path: 'masters',
+                loadChildren: () => import('./features/masters/masters.routes').then(m => m.mastersRoutes)
+            },
+            {
+                path: 'reports',
+                loadChildren: () => import('./features/reports/reports.routes').then(m => m.reportsRoutes)
+            },
+            {
+                path: 'settings',
+                loadComponent: () => import('./features/settings/settings').then(m => m.Settings)
+            }
         ]
     }
 ];

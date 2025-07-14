@@ -17,11 +17,13 @@ export class Accounting {
   navData: NavItem[] = [
     {
       name: 'Account',
-      url: 'account-master'
+      url: 'account-master',
+      icon: ''
     },
     {
       name: 'Payment',
-      url: 'payment'
+      url: 'payment',
+      icon: ''
     }
   ]
 }
