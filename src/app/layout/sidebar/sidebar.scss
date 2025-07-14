@@ -70,10 +70,6 @@
             text-transform: uppercase;
         }
     }
-
-    .bottom {
-        flex-basis: 70px;
-    }
 }
 
 @media only screen and (max-width: 699px) {
@@ -114,10 +110,6 @@
             span {
                 color: var(--text-color);
             }
-        }
-
-        .bottom {
-            flex-basis: 70px;
         }
     }
 }

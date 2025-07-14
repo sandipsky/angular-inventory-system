@@ -5,19 +5,12 @@
 
     <div class="items-container">
         <ul>
-            @for (item of navData.slice(0,-1); track $index) {
+            @for (item of navData; track $index) {
             <li [routerLink]="item.url" routerLinkActive="active" class="menu-item">
                 <mat-icon class="icon" [fontIcon]="item.icon"></mat-icon>
                 <span>{{item.name}}</span>
             </li>
             }
         </ul>
-    </div>
-
-    <div class="bottom">
-        <li [routerLink]="navData[navData.length - 1].url" routerLinkActive="active" class="menu-item">
-            <mat-icon class="icon" [fontIcon]="navData[navData.length - 1].icon"></mat-icon>
-            <span>{{navData[navData.length - 1].name}}</span>
-        </li>
     </div>
 </div>
